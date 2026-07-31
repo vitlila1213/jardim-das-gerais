@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Condomínio Jardim das Gerais | Lotes Premium em Sabará MG</title>
+    <meta name="description" content="Lotes a partir de 1.000m² em condomínio fechado premium em Sabará - MG. Apenas 18km de BH. Infraestrutura completa, lazer e segurança 24h.">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Condomínio Jardim das Gerais | Lotes Premium">
+    <meta property="og:description" content="Lotes a partir de 1.000m² em condomínio fechado premium em Sabará - MG.">
+    <meta property="og:type" content="website">
+    
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-badge">📍 Sabará - MG | A apenas 18km de BH</div>
+            <h1 class="hero-title" id="hero-title">
+                <span class="hero-word" data-index="0">VEM</span>
+                <span class="hero-word" data-index="1">AÍ</span>
+                <span class="hero-word" data-index="2">O</span>
+                <span class="hero-word highlight" data-index="3">CONDOMÍNIO</span>
+                <span class="hero-word highlight" data-index="4">JARDIM</span>
+                <span class="hero-word highlight" data-index="5">DAS</span>
+                <span class="hero-word highlight" data-index="6">GERAIS</span>
+            </h1>
+            <p class="hero-subtitle">Lotes a partir de 1.000m² em condomínio fechado premium</p>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-indicator-dot"></div>
+        </div>
+    </section>
+
+    <!-- ========== VIDEO SECTION ========== -->
+    <section class="video-section" id="video">
+        <h2 class="section-title animate-on-scroll">Conheça o Empreendimento</h2>
+        <div class="video-container animate-on-scroll iframe-container">
+            <iframe src="https://player.vimeo.com/video/1214444029?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479&amp;autoplay=1&amp;muted=1&amp;loop=1" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" referrerpolicy="strict-origin-when-cross-origin" title="VÍDEO 3D JARDIM DAS GERAIS"></iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+    </section>
+
+    <!-- ========== FORM SECTION ========== -->
+    <section class="form-section" id="cadastro">
+        <div class="form-container animate-on-scroll">
+            <div class="form-header">
+                <h2>Garanta sua Oportunidade</h2>
+                <p>Preencha seus dados e receba informações exclusivas</p>
+            </div>
+            
+            <form id="lead-form">
+                <div class="form-group">
+                    <label for="nome" class="form-label">Nome Completo *</label>
+                    <input type="text" id="nome" name="nome" class="form-control" required placeholder="Digite seu nome completo">
+                </div>
+                
+                <div class="form-group">
+                    <label for="whatsapp" class="form-label">WhatsApp *</label>
+                    <input type="tel" id="whatsapp" name="whatsapp" class="form-control" required placeholder="(31) 99999-9999">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email" class="form-label">E-mail *</label>
+                    <input type="email" id="email" name="email" class="form-control" required placeholder="seu@email.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="cidade" class="form-label">Cidade (Opcional)</label>
+                    <input type="text" id="cidade" name="cidade" class="form-control" placeholder="Sua cidade">
+                </div>
+                
+                <button type="submit" class="btn btn-primary btn-submit" id="submit-btn">ENVIAR MEUS DADOS</button>
+                
+                <div id="form-feedback" class="form-message"></div>
+            </form>
+            
+            <div id="thank-you-block" class="thank-you-block" style="display: none;">
+                <div class="thank-you-icon">✅</div>
+                <h3>Obrigado pelo interesse!</h3>
+                <p>Seus dados foram recebidos com sucesso. Em breve, um de nossos consultores entrará em contato para apresentar todas as vantagens do Jardim das Gerais.</p>
+                <button id="btn-back-to-site" class="btn btn-secondary">VOLTAR À GALERIA</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== GALLERY SECTION — CARROSSEL AUTOMÁTICO ========== -->
+    <section class="gallery-section" id="galeria">
+        <h2 class="section-title animate-on-scroll">Imagens do Empreendimento</h2>
+        
+        <div class="gallery-wrapper" id="gallery-wrapper">
+            <button class="gallery-arrow gallery-arrow--left" id="gallery-prev" aria-label="Foto anterior">&#10094;</button>
+            <button class="gallery-arrow gallery-arrow--right" id="gallery-next" aria-label="Próxima foto">&#10095;</button>
+            
+            <div class="gallery-track" id="gallery-track">
+                <div class="gallery-item"><img src="assets/images/foto1.jpg" alt="Vista do Empreendimento 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto2.jpg" alt="Vista do Empreendimento 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto3.jpg" alt="Vista do Empreendimento 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto4.jpg" alt="Vista do Empreendimento 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto5.jpg" alt="Vista do Empreendimento 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto6.jpg" alt="Vista do Empreendimento 6" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto7.jpg" alt="Vista do Empreendimento 7" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto8.jpg" alt="Vista do Empreendimento 8" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto9.jpg" alt="Vista do Empreendimento 9" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto10.jpg" alt="Vista do Empreendimento 10" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto11.jpg" alt="Vista do Empreendimento 11" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto12.jpg" alt="Vista do Empreendimento 12" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto13.jpg" alt="Vista do Empreendimento 13" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto14.jpg" alt="Vista do Empreendimento 14" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto15.jpg" alt="Vista do Empreendimento 15" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto16.jpg" alt="Vista do Empreendimento 16" loading="lazy"></div>
+                <div class="gallery-item"><img src="assets/images/foto17.jpg" alt="Vista do Empreendimento 17" loading="lazy"></div>
+            </div>
+            
+            <div class="gallery-dots" id="gallery-dots"></div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <div class="footer-logo">Jardim das Gerais</div>
+        <div class="footer-tagline">Grupo GBR Empreendimentos</div>
+        
+        <div class="social-icons">
+            <a href="#" aria-label="WhatsApp">
+                <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.391.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.099.824zm-3.402-10.416c-4.256 0-7.719 3.463-7.72 7.719 0 1.353.35 2.671 1.017 3.834l-1.09 3.98 4.072-1.069c1.118.604 2.381.922 3.693.923h.003c4.256 0 7.719-3.463 7.72-7.72-.001-4.256-3.464-7.719-7.72-7.719z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+                <svg viewBox="0 0 24 24"><path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/></svg>
+            </a>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>As imagens são meramente ilustrativas e sujeitas a alteração sem aviso prévio.</p>
+            <p>&copy; 2026 Grupo GBR Empreendimentos. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
